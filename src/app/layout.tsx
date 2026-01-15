@@ -1,23 +1,20 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import "./globals.css";
-
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Icognito | Random video or Voice Chat with Random  People",
-  description: "Random Video or  Voice Chat with Random People",
+    title: 'Incognito | Anonymous video chat',
+    description: 'Random Video or  Voice Chat with Random People',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body>{children}</body>
+        </html>
+    );
 }
