@@ -3,8 +3,16 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Sparkle, Video } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useEffect } from 'react';
+import { io } from 'socket.io-client';
 
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
+    transports: ['websocket'],
+});
 export default function Home() {
+    useEffect(() => {
+        socket.emit('name', 'saif');
+    }, []);
     return (
         <>
             <Navbar />
